@@ -37,8 +37,8 @@ export default function SignIn() {
   const [sipUsername, setSipUsername] = useState("");
   const [sipPassword, setSipPassword] = useState("");
 
-  const [username, setUsername] = useSessionStorage("login", "");
-  const [password, setPassword] = useSessionStorage("password", "");
+  const [, setUsername] = useSessionStorage("login", "");
+  const [, setPassword] = useSessionStorage("password", "");
 
   function onChangeHandler(e) {
     if (e.target?.id === "email") {

@@ -133,8 +133,8 @@ function dialerReducer(state, action) {
 const SimpleDialer = () => {
   const [state, dispatch] = useReducer(dialerReducer, initialState);
 
-  const [username, setUsername] = useSessionStorage("login", "");
-  const [password, setPassword] = useSessionStorage("password", "");
+  const [username] = useSessionStorage("login", "");
+  const [password] = useSessionStorage("password", "");
 
   const client = useRef(null);
   const activeCall = useRef(null);

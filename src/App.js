@@ -10,10 +10,8 @@ import SimpleDialer from "./components/SimpleDialer";
 import Login from "./components/SignIn";
 
 function App() {
-  const [username, setUsername] = useSessionStorage("login", "");
-  const [password, setPassword] = useSessionStorage("password", "");
-
-  // let history = useHistory();
+  const [username] = useSessionStorage("login", "");
+  const [password] = useSessionStorage("password", "");
 
   useEffect(() => {
     if (!username && !password) {
