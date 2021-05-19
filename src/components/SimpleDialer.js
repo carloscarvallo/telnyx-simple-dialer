@@ -9,6 +9,7 @@ import MuiAlert from "@material-ui/lab/Alert";
 import { AsYouType } from "libphonenumber-js";
 import { useSessionStorage } from "react-use";
 import { useHistory } from "react-router-dom";
+import LZString from "lz-string";
 
 import { TelnyxRTC } from "@telnyx/webrtc";
 
@@ -147,8 +148,8 @@ const SimpleDialer = () => {
     try {
       // Initialize the client
       client.current = new TelnyxRTC({
-        login: username || "",
-        password: password || "",
+        login: LZString.decompressFromUTF16(username) || "",
+        password: LZString.decompressFromUTF16(password) || "",
       });
 
       client.current.connect();

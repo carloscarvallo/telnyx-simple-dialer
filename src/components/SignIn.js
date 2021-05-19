@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import LZString from 'lz-string'
+
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -51,8 +53,8 @@ export default function SignIn() {
   }
 
   function onClickHandler() {
-    setUsername(sipUsername);
-    setPassword(sipPassword);
+    setUsername(LZString.compressToUTF16(sipUsername));
+    setPassword(LZString.compressToUTF16(sipPassword));
   }
 
   return (
